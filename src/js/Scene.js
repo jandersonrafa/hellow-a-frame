@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import 'aframe'
 import image from '../img/grid.jpg'
+import Plane from './Plane'
+import Stand from './Stand'
 
 class Scene extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            planeImage: "shader: flat; src: url(" +  image  +"); repeat: 10 10"
+            planeImage: "shader: flat; src: url(" +  image  +"); repeat: 5 5"
         }
     }
     render() {
@@ -25,14 +27,8 @@ class Scene extends Component {
                     geometry="primitive: cylinder; radius: 0.5, height: 1.5"
                     position="1 0.75 -3"
                     material="color: #FFC65D" />
-                <a-entity
-                    geometry="primitive: plane; width: 4; height: 4"
-                    position="0 0 -4"
-                    rotation="-90 0 0"
-                    scale="3 3 3"
-                    material={this.state.planeImage}
-                    >
-                    </a-entity>
+                    <Plane />
+                    <Stand />
             </a-scene>
         );
     }
