@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         // Loads images into CSS and Javascript files
-        test: /\.jpg$/,
+        test: /\.(png|svg|jpg|gif|mp4)$/,
         use: [{loader: "url-loader"}]
       },
       {
