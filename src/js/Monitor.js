@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'aframe';
-import video from '../video/video.mp4'
+//import video from '../video/video.mp4'
 
 const AFRAME = window.AFRAME;
 
@@ -8,9 +8,9 @@ class Monitor extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            video: "src: " + video
-        }
+        // this.state = {
+        //     video: "src: " + video
+        // }
 
     }
     //  OPCAO 1 PARA EVENTO CLICK
