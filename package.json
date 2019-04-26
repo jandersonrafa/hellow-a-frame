@@ -10,7 +10,7 @@
     "start-prod": "npm run buildProd && node ./dist/server.js",
     "heroku-prebuild": "npm install --only=production",
     "heroku-postbuild": "webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
-    "start": "node ./dist/server.js"
+    "start": "npm run buildProd && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
