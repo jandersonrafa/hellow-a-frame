@@ -6,11 +6,9 @@
   "scripts": {
     "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
-    "start-dev": "node ./dist/server.js",
-    "start-prod": "npm run buildProd && node ./dist/server.js",
     "heroku-prebuild": "npm install --only=production",
     "heroku-postbuild": "webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
-    "start": "npm run buildProd && node ./dist/server.js"
+    "start": "node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +22,6 @@
   },
   "homepage": "https://github.com/jandersonrafa/hellow-a-frame#readme",
   "devDependencies": {
-    
-  },
-  "dependencies": {
     "eslint": "^5.14.1",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.12.4",
@@ -34,7 +29,9 @@
     "style-loader": "^0.23.1",
     "webpack-dev-middleware": "^3.6.0",
     "webpack-hot-middleware": "^2.24.3",
-    "webpack-node-externals": "^1.7.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
