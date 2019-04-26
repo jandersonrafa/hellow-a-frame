@@ -23,7 +23,5 @@ class Plane extends Component {
         );
     }
 }
-                    //</a-scene>material="color: #7BC8A4" /
-
 export default Plane;
 
