@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import AFRAME from 'aframe'
+import 'aframe'
 import Plane from './Plane'
 import Stand from './Stand'
 import Monitor from './Monitor'
+import Pc from './Pc'
+import Lab from './Lab'
 
 class Scene extends Component {
     constructor(props) {
@@ -14,8 +16,21 @@ class Scene extends Component {
             <a-scene>
                 <a-camera><a-cursor color="red"></a-cursor></a-camera>
                 <Plane />
-                
-                <Stand />
+                <Lab />
+                {/* mesas */}
+                <a-entity scale="1 1 1" position="0 0 0"><Stand /></a-entity>
+                <a-entity scale="1 1 1" position="-5 0 0"><Stand /></a-entity>  
+                <a-entity scale="1 1 1" position="5 0 0"><Stand /></a-entity>  
+                {/* pcs */}
+                <a-entity position="0 1 0"><Pc /></a-entity>
+                <a-entity position="0 1 3"><Pc /></a-entity>
+                <a-entity position="0 1 -3"><Pc /></a-entity>
+                <a-entity position="5 1 0"><Pc /></a-entity>
+                <a-entity position="5 1 3"><Pc /></a-entity>
+                <a-entity position="5 1 -3"><Pc /></a-entity>
+                <a-entity position="-5 1 3"><Pc /></a-entity>
+                <a-entity position="-5 1 -3"><Pc /></a-entity>
+
                <Monitor />
             </a-scene>
         );

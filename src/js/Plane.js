@@ -14,9 +14,9 @@ class Plane extends Component {
         return (
                 <a-entity
                     geometry="primitive: plane; width: 4; height: 4"
-                    position="0 0 -4"
+                    position="0 0 0"
                     rotation="-90 0 0"
-                    scale="3 3 3"
+                    scale="4 4 4"
                     material={this.state.planeImage}
                     >
                 </a-entity>
