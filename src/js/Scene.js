@@ -9,6 +9,11 @@ import Lab from './Lab'
 class Scene extends Component {
     constructor(props) {
         super(props);
+
+        document.addEventListener('keydown', function(event) {
+            debugger
+                alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        }, false);
     }
 
     render() {
