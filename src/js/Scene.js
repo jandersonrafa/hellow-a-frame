@@ -13,8 +13,8 @@ class Scene extends Component {
 
     render() {
         return (
-            <a-scene>
-                <a-camera><a-cursor color="red"></a-cursor></a-camera>
+            <a-scene stats>
+                <a-camera><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
                 <Plane />
                 <Lab />
                 {/* mesas */}
