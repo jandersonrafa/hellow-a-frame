@@ -31,7 +31,7 @@ class Scene extends Component {
             }
             cam.setAttribute('position', pos);
 
-            //alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+            alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
             console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
         }, false);
     }
