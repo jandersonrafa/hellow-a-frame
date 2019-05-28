@@ -24,19 +24,19 @@ class Scene extends Component {
             let pos = cam.getAttribute('position');
             //frente
             if (event.key == 'MediaFastForward') {
-                pos.z--;
+                pos.z-=0.1;
             }
             //traz
             if (event.key == 'MediaRewind') {
-                pos.z++;
+                pos.z+=0.1;
             }
             // esquerda
             if (event.key == 'MediaTrackPrevious') {
-                pos.x--;
+                pos.x-=0.1;
             }
             // direita
             if (event.key == 'MediaTrackNext') {
-                pos.x++;
+                pos.x+=0.1;
             }
             cam.setAttribute('position', pos);
             console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
