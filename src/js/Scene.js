@@ -27,7 +27,7 @@ class Scene extends Component {
             // player.position.setX(player.position.x - y)
             // player.position.setZ(player.position.z - x)
 
-            if (event.key == 'i') {
+            if (event.key == 'MediaFastForward') {
                 var x = 0.1 * Math.cos(angle.y * Math.PI / 180)
                 var y = 0.1 * Math.sin(angle.y * Math.PI / 180)
                 var pos = player.position
@@ -36,7 +36,7 @@ class Scene extends Component {
 
             }
             //traz
-            if (event.key == 'k') {
+            if (event.key == 'MediaRewind') {
                 var x = 0.1 * Math.cos(angle.y * Math.PI / 180)
                 var y = 0.1 * Math.sin(angle.y * Math.PI / 180)
                 var pos = player.position
@@ -45,7 +45,7 @@ class Scene extends Component {
 
             }
             // // esquerda
-            if (event.key == 'j') {
+            if (event.key == 'MediaTrackPrevious') {
                 var x = 0.1 * Math.cos(angle.y * Math.PI / 180)
                 var y = 0.1 * Math.sin(angle.y * Math.PI / 180)
                 var pos = player.position
@@ -53,7 +53,7 @@ class Scene extends Component {
                 player.position.setZ(player.position.z + y)
             }
             // // direita
-            if (event.key == 'l') {
+            if (event.key == 'MediaTrackNext') {
                 var x = 0.1 * Math.cos(angle.y * Math.PI / 180)
                 var y = 0.1 * Math.sin(angle.y * Math.PI / 180)
                 var pos = player.position
