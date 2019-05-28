@@ -13,42 +13,33 @@ class Scene extends Component {
         this.myRef = React.createRef();
 
     }
-    
+
 
     componentDidMount() {
-        // const teste = window
-        // document.querySelector('a-scene').addEventListener('enter-vr', function () {
-        //     //var player = this.myRef.current
-        //     var player = document.querySelector("#camera").object3D
-        //     //var player = this.myRef.current
-        //     teste.addEventListener("keydown", (e) => {
-        //         var angle = player.rotation
-        //         var x = 1 * Math.cos(angle.y * Math.PI / 180)
-        //         var y = 1 * Math.sin(angle.y * Math.PI / 180)
-        //         var pos = player.position
-        //         player.position.setX(player.position.x - y)
-        //         player.position.setZ(player.position.z - x)
-        //         // pos.x -= y;
-        //         // pos.z -= x;
-        //         player.setAttribute("position", pos);
-        //       //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        //       console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        //     })
-        //  });
-         
         var player = this.myRef.current
 
         //var player = this.myRef.current
         window.addEventListener("keydown", (e) => {
-            var angle = player.getAttribute("rotation")
-            var x = 1 * Math.cos(angle.y * Math.PI / 180)
-            var y = 1 * Math.sin(angle.y * Math.PI / 180)
-            var pos = player.getAttribute("position")
-            pos.x -= y;
-            pos.z -= x;
-            player.setAttribute("position", pos);
-          //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-          console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+            let cam = document.querySelector('[camera]');
+            let pos = cam.getAttribute('position');
+            //frente
+            if (event.key == 'MediaFastForward') {
+                pos.z--;
+            }
+            //traz
+            if (event.key == 'MediaRewind') {
+                pos.z++;
+            }
+            // esquerda
+            if (event.key == 'MediaTrackPrevious') {
+                pos.x--;
+            }
+            // direita
+            if (event.key == 'MediaTrackNext') {
+                pos.x++;
+            }
+            cam.setAttribute('position', pos);
+            console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
         })
 
 
@@ -73,15 +64,15 @@ class Scene extends Component {
         //     }
         //     cam.setAttribute('position', pos);
 
-        
+
         // }, false);
     }
     render() {
         return (
             <a-scene stats>
-            <a-entity id="cameraRig" ref={this.myRef} position="0 1.6 0">
-                <a-camera id="camera" ><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
-</a-entity>
+                <a-entity  ref={this.myRef} position="0 0 0">
+                    <a-camera id="camera" ><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
+                </a-entity>
                 <Plane />
                 <Lab />
                 {/* mesas */}
