@@ -16,40 +16,40 @@ class Scene extends Component {
     
 
     componentDidMount() {
-        const teste = window
-        document.querySelector('a-scene').addEventListener('enter-vr', function () {
-            //var player = this.myRef.current
-            var player = document.querySelector("#camera").object3D
-            //var player = this.myRef.current
-            teste.addEventListener("keydown", (e) => {
-                var angle = player.rotation
-                var x = 1 * Math.cos(angle.y * Math.PI / 180)
-                var y = 1 * Math.sin(angle.y * Math.PI / 180)
-                var pos = player.position
-                player.position.setX(player.position.x - y)
-                player.position.setZ(player.position.z - x)
-                // pos.x -= y;
-                // pos.z -= x;
-                player.setAttribute("position", pos);
-              //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-              console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-            })
-         });
+        // const teste = window
+        // document.querySelector('a-scene').addEventListener('enter-vr', function () {
+        //     //var player = this.myRef.current
+        //     var player = document.querySelector("#camera").object3D
+        //     //var player = this.myRef.current
+        //     teste.addEventListener("keydown", (e) => {
+        //         var angle = player.rotation
+        //         var x = 1 * Math.cos(angle.y * Math.PI / 180)
+        //         var y = 1 * Math.sin(angle.y * Math.PI / 180)
+        //         var pos = player.position
+        //         player.position.setX(player.position.x - y)
+        //         player.position.setZ(player.position.z - x)
+        //         // pos.x -= y;
+        //         // pos.z -= x;
+        //         player.setAttribute("position", pos);
+        //       //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        //       console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        //     })
+        //  });
          
-        // var player = this.myRef.current
+        var player = this.myRef.current
 
-        // //var player = this.myRef.current
-        // window.addEventListener("keydown", (e) => {
-        //     var angle = player.getAttribute("rotation")
-        //     var x = 1 * Math.cos(angle.y * Math.PI / 180)
-        //     var y = 1 * Math.sin(angle.y * Math.PI / 180)
-        //     var pos = player.getAttribute("position")
-        //     pos.x -= y;
-        //     pos.z -= x;
-        //     player.setAttribute("position", pos);
-        //   //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        //   console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        // })
+        //var player = this.myRef.current
+        window.addEventListener("keydown", (e) => {
+            var angle = player.getAttribute("rotation")
+            var x = 1 * Math.cos(angle.y * Math.PI / 180)
+            var y = 1 * Math.sin(angle.y * Math.PI / 180)
+            var pos = player.getAttribute("position")
+            pos.x -= y;
+            pos.z -= x;
+            player.setAttribute("position", pos);
+          //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+          console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        })
 
 
         // document.addEventListener('keydown', function (event) {
@@ -79,7 +79,9 @@ class Scene extends Component {
     render() {
         return (
             <a-scene stats>
-                <a-camera id="camera" ref={this.myRef}><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
+            <a-entity id="cameraRig" ref={this.myRef} position="0 1.6 0">
+                <a-camera id="camera" ><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
+</a-entity>
                 <Plane />
                 <Lab />
                 {/* mesas */}
