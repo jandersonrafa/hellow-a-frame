@@ -9,11 +9,14 @@ import Lab from './Lab'
 class Scene extends Component {
     constructor(props) {
         super(props);
+
+        this.myRef = React.createRef();
+
     }
 
     componentDidMount() {
         
-        var player = document.querySelector("a-camera")
+        var player = this.myRef.current
         window.addEventListener("keydown", (e) => {
           if (event.key == 'MediaFastForward') {
             var angle = player.getAttribute("rotation")
@@ -24,7 +27,10 @@ class Scene extends Component {
             pos.z -= x;
             player.setAttribute("position", pos);
           }
+          //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+          console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
         })
+
 
         // document.addEventListener('keydown', function (event) {
         //     let cam = document.querySelector('[camera]');
@@ -47,14 +53,13 @@ class Scene extends Component {
         //     }
         //     cam.setAttribute('position', pos);
 
-        //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        //     console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        
         // }, false);
     }
     render() {
         return (
             <a-scene stats>
-                <a-camera><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
+                <a-camera ref={this.myRef}><a-cursor fuse={true} fuse-timeout={2000} color="red"></a-cursor></a-camera>
                 <Plane />
                 <Lab />
                 {/* mesas */}
