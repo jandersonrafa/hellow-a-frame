@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import 'aframe'
 import Plane from './Plane'
 import Stand from './Stand'
@@ -15,14 +16,26 @@ class Scene extends Component {
     }
 
     componentDidMount() {
-        
-        var player = this.myRef.current
+        const node = ReactDOM.findDOMNode(this);
+
+        var player = node.querySelector("a-camera")
+
+        //var player = this.myRef.current
         window.addEventListener("keydown", (e) => {
           if (event.key == 'MediaFastForward') {
             var angle = player.getAttribute("rotation")
             var x = 1 * Math.cos(angle.y * Math.PI / 180)
             var y = 1 * Math.sin(angle.y * Math.PI / 180)
             var pos = player.getAttribute("position")
+            pos.x -= y;
+            pos.z -= x;
+            player.setAttribute("position", pos);
+          }
+          if (event.key == 'MediaRewind') {
+            var angle = player.getAttribute("rotation")
+            var x = 1 * Math.cos(angle.y * Math.PI / 180)
+            var y = 1 * Math.sin(angle.y * Math.PI / 180)
+            var pos = player.components.camera.camera.position
             pos.x -= y;
             pos.z -= x;
             player.setAttribute("position", pos);

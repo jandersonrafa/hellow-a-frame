@@ -39,7 +39,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "babel-preset-env": "^1.7.0",    
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^2.1.0",
     "express": "^4.16.4",
     "html-loader": "^0.5.5",
@@ -48,10 +48,10 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "popper.js": "^1.14.7",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react-dom": "^16.8.6",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"    
+    "webpack-cli": "^3.2.3"
   }
 }
