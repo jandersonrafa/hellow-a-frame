@@ -48,7 +48,6 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "popper.js": "^1.14.7",
     "react": "^16.8.3",
-    "react-dom": "^16.8.6",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.5",
