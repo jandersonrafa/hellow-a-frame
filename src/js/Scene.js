@@ -9,33 +9,48 @@ import Lab from './Lab'
 class Scene extends Component {
     constructor(props) {
         super(props);
-
-        document.addEventListener('keydown', function (event) {
-            let cam = document.querySelector('[camera]');
-            let pos = cam.getAttribute('position');
-            //frente
-            if (event.key == 'MediaFastForward') {
-                pos.z--;
-            }
-            //traz
-            if (event.key == 'MediaRewind') {
-                pos.z++;
-            }
-            // esquerda
-            if (event.key == 'MediaTrackPrevious') {
-                pos.x--;
-            }
-            // direita
-            if (event.key == 'MediaTrackNext') {
-                pos.x++;
-            }
-            cam.setAttribute('position', pos);
-
-            alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-            console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
-        }, false);
     }
 
+    componentDidMount() {
+        
+        var player = document.querySelector("a-camera")
+        window.addEventListener("keydown", (e) => {
+          if (event.key == 'MediaFastForward') {
+            var angle = player.getAttribute("rotation")
+            var x = 1 * Math.cos(angle.y * Math.PI / 180)
+            var y = 1 * Math.sin(angle.y * Math.PI / 180)
+            var pos = player.getAttribute("position")
+            pos.x -= y;
+            pos.z -= x;
+            player.setAttribute("position", pos);
+          }
+        })
+
+        // document.addEventListener('keydown', function (event) {
+        //     let cam = document.querySelector('[camera]');
+        //     let pos = cam.getAttribute('position');
+        //     //frente
+        //     if (event.key == 'MediaFastForward') {
+        //         pos.z--;
+        //     }
+        //     //traz
+        //     if (event.key == 'MediaRewind') {
+        //         pos.z++;
+        //     }
+        //     // esquerda
+        //     if (event.key == 'MediaTrackPrevious') {
+        //         pos.x--;
+        //     }
+        //     // direita
+        //     if (event.key == 'MediaTrackNext') {
+        //         pos.x++;
+        //     }
+        //     cam.setAttribute('position', pos);
+
+        //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        //     console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
+        // }, false);
+    }
     render() {
         return (
             <a-scene stats>
