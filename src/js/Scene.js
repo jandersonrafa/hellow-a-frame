@@ -19,7 +19,6 @@ class Scene extends Component {
 
         //var player = this.myRef.current
         window.addEventListener("keydown", (e) => {
-          if (event.key == 'MediaFastForward') {
             var angle = player.getAttribute("rotation")
             var x = 1 * Math.cos(angle.y * Math.PI / 180)
             var y = 1 * Math.sin(angle.y * Math.PI / 180)
@@ -27,18 +26,6 @@ class Scene extends Component {
             pos.x -= y;
             pos.z -= x;
             player.setAttribute("position", pos);
-          }
-          if (event.key == 'MediaRewind') {
-            let newP = player.components.camera.camera.parent.position.add(player.components.camera.camera.getWorldDirection().multiplyScalar(0.1));
-            player.setAttribute('position', newP)
-            // var angle = player.getAttribute("rotation")
-            // var x = 1 * Math.cos(angle.y * Math.PI / 180)
-            // var y = 1 * Math.sin(angle.y * Math.PI / 180)
-            // var pos = player.components.camera.camera.position
-            // pos.x -= y;
-            // pos.z -= x;
-            // player.setAttribute("position", pos);
-          }
           //     // alert("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
           console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
         })
