@@ -16,12 +16,9 @@ class Scene extends Component {
 
 
     componentDidMount() {
-        var player = this.myRef.current
-
-        //var player = this.myRef.current
         window.addEventListener("keydown", (e) => {
-            let cam = document.querySelector('[camera]');
-            let pos = cam.getAttribute('position');
+            const player = this.myRef.current.object3D
+            let pos = player.position;
             //frente
             if (event.key == 'MediaFastForward') {
                 pos.z-=0.1;
@@ -38,7 +35,10 @@ class Scene extends Component {
             if (event.key == 'MediaTrackNext') {
                 pos.x+=0.1;
             }
-            cam.setAttribute('position', pos);
+            player.position.setX(pos.x)
+            player.position.setY(pos.y)
+            player.position.setZ(pos.z)
+
             console.log("key:" + event.key + " - code: " + event.code + " - keyCode: " + event.keyCode)
         })
 
