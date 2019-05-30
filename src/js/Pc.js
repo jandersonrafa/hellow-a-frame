@@ -11,9 +11,6 @@ class Pc extends Component {
 
     handleClick(evt, teste) {
         evt.target.setAttribute("color", "red")
-        this.setState({
-            isHidden: !this.state.isHidden
-          })
     }
 
     render() {

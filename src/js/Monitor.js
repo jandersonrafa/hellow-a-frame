@@ -64,9 +64,6 @@ class Monitor extends Component {
 
     render() {
         return ([
-            <a-assets>
-                <video id={videoId} src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/"></video>
-            </a-assets>,
             <a-entity position="-5.153 1.25523 0.659">
 
                 {/* <a-box position="0 0.145 0" material="color: #ffffff"  sphere-listener scale="-0.13863 0.70018 1.19991"/> */}
