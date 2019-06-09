@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import 'aframe';
+//import video from '../video/video.mp4'
 
+// const AFRAME = window.AFRAME;
 
 const videoId = "video-tag"
-class Monitor extends Component {
+class Cable extends Component {
     constructor(props) {
         super(props);
 
@@ -62,17 +64,13 @@ class Monitor extends Component {
 
     render() {
         return ([
-            <a-entity position="-5.153 1.25523 0.659">
+            <a-box position="0.15 0 0" color="white" scale=" 0.025 0.015 0.01"></a-box>,
+            <a-box position="-0.15 0 0" color="white" scale="0.025 0.015 0.01"></a-box>,
+            <a-cylinder rotation="0 0 90" color="gray" height="0.3" radius="0.003"></a-cylinder>
 
-                {/* <a-box position="0 0.145 0" material="color: #ffffff"  sphere-listener scale="-0.13863 0.70018 1.19991"/> */}
-                {/* <a-plane width="2" height="2" position="0.070 0.143 0.00409" rotation="0 90 0" scale="-0.571 0.30851 1.19991" material={this.state.video} /> */}
-                {!this.state.isHidden && <a-video onClick={this.handleClickVideo} src={"#"+videoId} width="2" height="2" position="0.070 0.143 0.00409" rotation="0 90 0" scale="-0.571 0.30851 1.19991"></a-video>}
-                <a-box onClick={this.handleClick} position="0 0.145 0" material="color: #ffffff" sphere-listener scale="-0.13863 0.70018 1.19991" />
-                <a-box onClick={this.handleClick} position="0 -0.27 0" material="color: #ffffff" scale="0.09491 0.14386 0.24356" />
-                <a-box onClick={this.handleClick} position="0 -0.38 0" material="color: #ffffff" scale="0.24838 0.08111 0.59805" />
-            </a-entity>]
+        ]
         );
     }
 }
 //<a-entity position="-5.153 1.25523 0.659" >
-export default Monitor;
+export default Cable;

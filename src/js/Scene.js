@@ -6,6 +6,9 @@ import Monitor from './Monitor'
 import Pc from './Pc'
 import Printer from './Printer'
 import Lab from './Lab'
+import Notebook from './Notebook'
+
+import notebook from '../img/notebook.png'
 
 const videoId = "video-tag"
 class Scene extends Component {
@@ -66,7 +69,8 @@ class Scene extends Component {
     render() {
         return (
             <a-scene stats>
-               <a-assets>
+                 <a-assets>
+                    <img id="notebook" src={notebook}></img>
                     <video id={videoId} src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/"></video>
                 </a-assets>
                 <a-entity ref={this.myRef} position="0 0 0">
@@ -89,7 +93,7 @@ class Scene extends Component {
                 {/* printer 3D */}
                 {/* <a-entity position="-5 1 -3"><Printer /></a-entity> */}
                 <a-entity rotation="0 90 0" position="-5 1 -3"><Printer /></a-entity>
-
+                <a-entity rotation="0 90 0" position="-5 1 -3.76"><Notebook /></a-entity>
             
                 <Monitor />
             </a-scene>
