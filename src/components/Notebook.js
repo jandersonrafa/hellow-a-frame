@@ -33,8 +33,6 @@ class Notebook extends Component {
 
     render() {
         return ([
-
-            <a-entity position="-0.35 0 -0.105"><Cable /></a-entity>,
             <a-box material="color: #1b1b1b" rotation="-10 0 0" position="0 0.13 -0.15" scale="0.38 0.25 0.01 "></a-box>,
             <a-plane color="white" rotation="-10 0 0" position="0 0.14 -0.144" width="0.34" height="0.20"></a-plane>,
             <a-plane rotation="-90 0 0" src="#notebook" position="0 0.016 0" width="0.37" height="0.24"></a-plane>,

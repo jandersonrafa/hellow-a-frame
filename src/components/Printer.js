@@ -6,17 +6,28 @@ class Printer extends Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this)
+        this.playPrinter = this.playPrinter.bind(this)
+        this.stopPrinter = this.stopPrinter.bind(this)
         this.ref = React.createRef();
     }
 
-    handleClick(ev) {
+    playPrinter() {
         const player = this.ref.current
-        if (player.isPlaying) {
-            player.pause()
-        } else {
-            player.play()
-        }
-        console.log("clique")
+        player.play()
+    }
+    stopPrinter() {
+        const player = this.ref.current
+        player.pause()
+    }
+
+    handleClick(ev) {
+        // const player = this.ref.current
+        // if (player.isPlaying) {
+        //     player.pause()
+        // } else {
+        //     player.play()
+        // }
+        // console.log("clique")
         // player.translateX(0.1);
 
         // this.setState({
@@ -32,19 +43,19 @@ class Printer extends Component {
             <a-box onClick={this.handleClick} position="0 0 0" material="" scale="0.5 0.04 0.42" geometry="" color="red"></a-box>,
             <a-box onClick={this.handleClick} position="0.225 0.36874 0" material="" scale="0.05 0.04 0.33" geometry="" color="red"></a-box>,
             <a-box onClick={this.handleClick} position="-0.225 0.36874 0" material="" scale="0.05 0.04 0.33" geometry="" color="red"></a-box>,
-            <a-box onClick={this.handleClick}  position="0 0.029 0" material="" scale="0.5 0.03 0.42" geometry="" color="#252525"></a-box>,
+            <a-box onClick={this.handleClick} position="0 0.029 0" material="" scale="0.5 0.03 0.42" geometry="" color="#252525"></a-box>,
             <a-box onClick={this.handleClick} position="0.225 0.33736 0" material="" scale="0.05 0.03 0.42" geometry="" color="#252525"></a-box>,
             <a-box onClick={this.handleClick} position="-0.225 0.33736 0" material="" scale="0.05 0.03 0.42" geometry="" color="#252525"></a-box>,
             <a-box onClick={this.handleClick} position="0  0.33736 0.195" material="" scale="0.49 0.03 0.028" geometry="" color="#252525"></a-box>,
             <a-box onClick={this.handleClick} position="0  0.33736 -0.195" material="" scale="0.49 0.03 0.028" geometry="" color="#252525"></a-box>,
-            
+
             <a-cylinder radius="0.5" rotation="0 0 90" position="0 0.33736 0.04" material="color: #252525" scale="0.015 0.49 0.015" />,
             <a-cylinder radius="0.5" rotation="0 0 90" position="0 0.33736 -0.04" material="color: #252525" scale="0.015 0.49 0.015" />,
             <a-box onClick={this.handleClick} position="0 0.08 0" material="" scale="0.2 0.02 0.2" geometry="" color="blue"></a-box>,
 
-            <a-entity onClick={this.handleClick} ref={this.ref} animation="property: position; from: 0.1 0 0; to: -0.1 0 0; dur: 2000; easing: linear; loop: true;">
-                
-                <a-box position="0 0.33304 0" material="" scale="0.15 0.15 0.15"  geometry="" color="gray" ></a-box>
+            <a-entity onClick={this.handleClick} ref={this.ref} animation="property: position; from: 0.1 0 0; to: -0.1 0 0; dur: 2000; easing: linear; loop: true">
+
+                <a-box position="0 0.33304 0" material="" scale="0.15 0.15 0.15" geometry="" color="gray" ></a-box>
                 <a-cylinder position="0 0.188 0" color="white" scale="0.005 0.13 0.005"></a-cylinder>
             </a-entity>,
             //    hastes
